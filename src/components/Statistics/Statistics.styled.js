@@ -25,6 +25,7 @@ export const StatisticItem = styled.li`
   gap: 15px;
   flex-direction: column;
   min-width: 100px;
+  background-color: ${randomColor};
 `;
 
 export const Lable = styled.span`
@@ -34,3 +35,9 @@ export const Lable = styled.span`
 export const Percentage = styled.span`
   text-align: center;
 `;
+
+function randomColor() {
+  return `rgb(${Math.floor(Math.random() * 256)}, ${Math.floor(
+    Math.random() * 256
+  )}, ${Math.floor(Math.random() * 256)})`;
+}

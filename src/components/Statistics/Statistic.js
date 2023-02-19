@@ -14,7 +14,7 @@ export const Statistic = ({ title, stats }) => {
       {title && <Title>{title}</Title>}
       <StatisticList>
         {stats.map(({ id, label, percentage }) => (
-          <StatisticItem key={id} style={{ backgroundColor: randomColor() }}>
+          <StatisticItem key={id}>
             <Lable>{label}</Lable>
             <Percentage>{percentage}%</Percentage>
           </StatisticItem>
@@ -23,12 +23,6 @@ export const Statistic = ({ title, stats }) => {
     </StatisticBlock>
   );
 };
-
-function randomColor() {
-  return `rgb(${Math.floor(Math.random() * 256)}, ${Math.floor(
-    Math.random() * 256
-  )}, ${Math.floor(Math.random() * 256)})`;
-}
 
 Statistic.propTypes = {
   title: PropTypes.string,
